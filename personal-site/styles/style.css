@@ -23,6 +23,34 @@ header {
     backdrop-filter: blur(5px);
 }
 
+.social-icons {
+    display: flex;
+    align-items: center;
+    margin-left: 2.5rem;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.1);
+}
+
+.social-icons img {
+    width: 30px; 
+    height: 30px;
+    filter: brightness(0) saturate(100%) invert(44%) sepia(17%) saturate(1203%) hue-rotate(154deg) brightness(91%) contrast(87%);
+    transition: filter 0.3s ease;
+}
+
+.social-icons img:hover {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(70%) saturate(1203%) hue-rotate(154deg) brightness(91%) contrast(87%);
+}
+
 .nav-container {
     width: 90%;
     max-width: 1200px;
@@ -33,6 +61,19 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo {
@@ -101,4 +142,84 @@ nav {
 
 .nav-links a:hover::after {
     width: 100%;
+}
+
+.hero {
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.2) 0%, rgba(52, 152, 219, 0.8) 100%);
+    color: white;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: #ecf0f1;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+    color: #ecf0f1;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero-highlight {
+    color: #1b82c7;
+    font-weight: bold;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border: 2px solid #ffffff;
+    animation: fadeIn 1s ease-in;
+    min-width: 180px;
+    text-align: center;
+}
+
+.btn-projects {
+    background-color: #70d6dd96;
+}
+
+.btn-contact {
+    background-color: #70d6dd96;
+}
+
+.btn:hover {
+    color: #3498db;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
