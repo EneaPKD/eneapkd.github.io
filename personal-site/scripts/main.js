@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // navi and scroll functionality
     const sections = document.querySelectorAll('.content-section, .hero');
     const navLinks = document.querySelectorAll('.nav-links a');
     
+    // update active nav link based on scroll position
     function updateActiveNav() {
         let current = '';
         
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateActiveNav);
     
+    // smooth scrolling for nav links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -41,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // header styling on scroll
     window.addEventListener('scroll', () => {
         const header = document.querySelector('header');
         if (window.scrollY > 100) {
@@ -52,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    // contact form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
@@ -81,34 +86,153 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    const projectsContainer = document.querySelector('.projects-container');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    
-    if (projectsContainer && prevBtn && nextBtn) {
+    // initialize projects carousel
+    function initProjectsCarousel() {
+        const projectsContainer = document.querySelector('.projects-container');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const dotsContainer = document.querySelector('.carousel-dots-container');
+        
+        if (!projectsContainer || !prevBtn || !nextBtn || !dotsContainer) return;
+        
         const projectCards = document.querySelectorAll('.project-card');
+        if (projectCards.length === 0) return;
+        
         const cardWidth = projectCards[0].offsetWidth + 32;
         let scrollPosition = 0;
+        const visibleCards = 3;
         
+        // create dots for carousel navigation
+        function createDots() {
+            dotsContainer.innerHTML = '';
+            const dotsWrapper = document.createElement('div');
+            dotsWrapper.className = 'carousel-dots';
+            dotsContainer.appendChild(dotsWrapper);
+            
+            for (let i = 0; i < projectCards.length; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'dot';
+                dot.setAttribute('data-index', i);
+                dotsWrapper.appendChild(dot);
+            }
+            
+            addDotEventListeners();
+        }
+        
+        // add click event listeners to dots
+        function addDotEventListeners() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const projectIndex = parseInt(dot.getAttribute('data-index'));
+                    centerProject(projectIndex);
+                });
+            });
+        }
+        
+        // update navigation buttons and dots state
+        function updateNavigation() {
+            const maxScroll = projectsContainer.scrollWidth - projectsContainer.clientWidth;
+            
+            prevBtn.disabled = scrollPosition <= 0;
+            nextBtn.disabled = scrollPosition >= maxScroll;
+            
+            const centerPoint = scrollPosition + (projectsContainer.clientWidth / 2);
+            const centerProjectIndex = Math.floor(centerPoint / cardWidth);
+            
+            let startIndex = Math.max(0, centerProjectIndex - 1);
+            let endIndex = Math.min(projectCards.length - 1, centerProjectIndex + 1);
+            
+            if (startIndex === 0) {
+                endIndex = Math.min(2, projectCards.length - 1);
+            } else if (endIndex === projectCards.length - 1) {
+                startIndex = Math.max(projectCards.length - 3, 0);
+            }
+            
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.remove('active');
+                
+                if (index >= startIndex && index <= endIndex) {
+                    dot.classList.add('active');
+                }
+            });
+        }
+        
+        // center a specific project in the view
+        function centerProject(index) {
+            const targetPosition = index * cardWidth;
+            const maxScroll = projectsContainer.scrollWidth - projectsContainer.clientWidth;
+            
+            scrollPosition = Math.max(0, Math.min(targetPosition, maxScroll));
+            
+            projectsContainer.scrollTo({
+                left: scrollPosition,
+                behavior: 'smooth'
+            });
+            
+            updateNavigation();
+        }
+        
+        // handles previous button
         prevBtn.addEventListener('click', () => {
-            scrollPosition = Math.max(scrollPosition - cardWidth * 3, 0);
+            if (prevBtn.disabled) return;
+            scrollPosition = Math.max(0, scrollPosition - cardWidth);
+            
             projectsContainer.scrollTo({
                 left: scrollPosition,
                 behavior: 'smooth'
             });
+            
+            setTimeout(updateNavigation, 300);
         });
         
+        // handles next button
         nextBtn.addEventListener('click', () => {
-            scrollPosition = Math.min(
-                scrollPosition + cardWidth * 3, 
-                projectsContainer.scrollWidth - projectsContainer.clientWidth
-            );
+            const maxScroll = projectsContainer.scrollWidth - projectsContainer.clientWidth;
+            if (nextBtn.disabled) return;
+            scrollPosition = Math.min(maxScroll, scrollPosition + cardWidth);
+            
             projectsContainer.scrollTo({
                 left: scrollPosition,
                 behavior: 'smooth'
             });
+            
+            setTimeout(updateNavigation, 300);
         });
+        
+        // handle scroll events to update navigation
+        projectsContainer.addEventListener('scroll', () => {
+            scrollPosition = projectsContainer.scrollLeft;
+            updateNavigation();
+        });
+        
+        // handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const newCardWidth = projectCards[0].offsetWidth + 32;
+                const currentProject = Math.round(scrollPosition / cardWidth);
+                scrollPosition = currentProject * newCardWidth;
+                
+                projectsContainer.scrollTo({
+                    left: scrollPosition,
+                    behavior: 'auto'
+                });
+                
+                updateNavigation();
+            }, 250);
+        });
+        
+        // set up dots and initial nav state
+        createDots();
+        updateNavigation();
     }
     
+    // start the projects carousel functionality
+    initProjectsCarousel();
+    
+    // initialize active navigation
     updateActiveNav();
 });
