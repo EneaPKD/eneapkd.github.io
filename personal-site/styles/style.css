@@ -7,10 +7,11 @@
 body {
     font-family: 'Raleway', sans-serif;
     line-height: 1.6;
-    background: linear-gradient(to bottom, rgb(116, 239, 248) 0%, rgb(144, 152, 226) 100%);
+    background: linear-gradient(to bottom, rgb(116, 239, 248) 0%, rgb(153, 161, 228) 100%);
     min-height: 100vh;
     padding-top: 80px;
-    color: #2c3e50
+    color: #2c3e50;
+    overflow-x: hidden;
 }
 
 header {
@@ -25,9 +26,10 @@ header {
 }
 
 .nav-container {
-    width: 90%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 nav {
@@ -44,6 +46,7 @@ nav {
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
+    white-space: nowrap;
 }
 
 .logo:hover {
@@ -102,10 +105,11 @@ nav {
 .nav-links {
     display: flex;
     list-style: none;
+    gap: 1.6rem;
 }
 
 .nav-links li {
-    margin-left: 1.6rem;
+    margin: 0;
 }
 
 .nav-links a {
@@ -116,6 +120,7 @@ nav {
     padding: 0.5rem 0;
     font-size: 1.1rem;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -137,8 +142,16 @@ nav {
     width: 100%;
 }
 
+.nav-links a.active {
+    color: rgb(141, 84, 153);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
 .hero {
-    height: 85vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,24 +159,28 @@ nav {
     color: white;
     text-align: center;
     padding: 0 1rem;
+    margin-top: -80px;
+    padding-top: 80px;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 900px;
+    padding: 0 2rem;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: clamp(2.5rem, 5vw, 4rem);
     margin-bottom: 1.5rem;
     color: #ecf0f1;
     animation: fadeIn 1s ease-in;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
     margin-bottom: 2.5rem;
     color: #ecf0f1;
     animation: fadeIn 1s ease-in;
+    line-height: 1.6;
 }
 
 .hero-highlight {
@@ -176,6 +193,7 @@ nav {
     justify-content: center;
     gap: 1.5rem;
     margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -191,6 +209,7 @@ nav {
     min-width: 180px;
     text-align: center;
     background-color: #70d6dd96;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -204,14 +223,15 @@ nav {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1600px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
 .content-section h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
+    font-size: clamp(2.2rem, 5vw, 3rem);
     margin-bottom: 3rem;
     color: #2c3e50;
     text-align: center;
@@ -233,10 +253,12 @@ nav {
     display: flex;
     align-items: center;
     gap: 3rem;
+    justify-content: center;
 }
 
 .about-text {
     flex: 2;
+    max-width: 600px;
 }
 
 .about-text p {
@@ -248,13 +270,14 @@ nav {
 .about-image {
     flex: 1;
     text-align: center;
+    max-width: 400px;
 }
 
 .profile-img {
     width: 100%;
     max-width: 300px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .skills-grid {
@@ -291,11 +314,20 @@ nav {
     font-weight: 500;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
+.projects-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
     margin-top: 2rem;
+}
+
+.projects-container {
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    gap: 2rem;
+    padding: 1rem;
+    width: 100%;
 }
 
 .project-card {
@@ -304,20 +336,38 @@ nav {
     overflow: hidden;
     backdrop-filter: blur(10px);
     transition: transform 0.3s ease;
+    flex: 0 0 calc(33.333% - 1.34rem);
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
 }
 
+.project-image {
+    height: 200px;
+    overflow: hidden;
+}
+
 .project-image img {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
 }
 
 .project-info {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-info h3 {
@@ -328,6 +378,7 @@ nav {
 .project-info p {
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    flex-grow: 1; 
 }
 
 .project-tech {
@@ -335,6 +386,7 @@ nav {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
+    margin-top: auto; 
 }
 
 .project-tech span {
@@ -345,14 +397,42 @@ nav {
 }
 
 .project-link {
-    color: #3f7c85;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    display: none;
 }
 
 .project-link:hover {
     color: #2c3e50;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: -25px;
+}
+
+.next-btn {
+    right: -25px;
 }
 
 .contact-content {
@@ -390,6 +470,13 @@ nav {
     font-size: 1rem;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3f7c85;
 }
 
 .form-group textarea {
@@ -406,19 +493,24 @@ nav {
 
 .resume-download {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .resume-download p {
     margin-bottom: 1.5rem;
 }
 
-.resume-highlights h3 {
-    color: #3f7c85;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+.resume-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
 }
 
-.resume-highlights h3:first-child {
+.resume-column h3 {
+    color: #3f7c85;
+    margin-bottom: 1rem;
     margin-top: 0;
 }
 
@@ -434,6 +526,15 @@ nav {
 .resume-item p {
     margin-bottom: 0.5rem;
     color: #666;
+}
+
+.view-projects-btn {
+    background-color: rgba(63, 124, 133, 0.7) !important;
+    margin-top: 1rem;
+}
+
+.view-projects-btn:hover {
+    background-color: rgba(63, 124, 133, 0.9) !important;
 }
 
 footer {
@@ -453,6 +554,33 @@ footer {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 1200px) {
+    .nav-container {
+        width: 100%;
+    }
+    
+    .projects-container {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+    
+    .project-card {
+        flex: 0 0 calc(50% - 1rem);
+        scroll-snap-align: start;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .resume-highlights {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -478,6 +606,11 @@ footer {
         justify-content: center;
     }
     
+    .hero {
+        height: 100vh;
+        padding-top: 120px;
+    }
+    
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -496,18 +629,17 @@ footer {
         width: 200px;
     }
     
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-    
     .contact-content,
     .resume-content {
         grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        flex: 0 0 100%;
+    }
+    
+    .carousel-btn {
+        display: none;
     }
     
     .content-section h2 {

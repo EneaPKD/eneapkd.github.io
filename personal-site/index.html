@@ -10,9 +10,9 @@
   </head>
   <body>
     <header>
-      <div class = "nav-container">
+      <div class="nav-container">
         <nav>
-          <a href="#" class="logo">Enea.PKD</a>
+          <a href="#hero" class="logo">Enea.PKD</a>
           <div class="social-icons">
             <a href="https://github.com/EneaPKD" aria-label="GitHub">
               <i class="fab fa-github"></i>
@@ -22,7 +22,7 @@
             </a>
           </div>
           <div class="nav-content">
-            <ul class = "nav-links">
+            <ul class="nav-links">
               <li><a href="#about">About Me</a></li>
               <li><a href="#skills">Skills</a></li>
               <li><a href="#projects">Projects</a></li>
@@ -34,7 +34,7 @@
       </div>
     </header>
 
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="hero-content">
         <h1>Hello my name is <span class="hero-highlight">Enea Papakostandini</span></h1>
         <p>I am currently a 3rd year student at Toronto Metropolitan University studying Computer Engineering. I have a passion for algorithm design, web development, and game development. </p>
@@ -55,9 +55,10 @@
                     <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or working on personal game development projects.</p>
           </div>
           <div class="about-image">
-            <img src = "images/dumb-enea.jpg" alt="Enea Papakostandini" class="profile-img">
+            <img src="images/dumb-enea.jpg" alt="Enea Papakostandini" class="profile-img">
           </div>
         </div>
+      </div>
     </section>
 
     <section id="skills" class="content-section">
@@ -104,52 +105,85 @@
     <section id="projects" class="content-section">
         <div class="container">
             <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>Central Processing Unit</h3>
-                        <p>A simple central processing unit with a completed FSM, ALU, Seven Segment Display, 4 to 16 Decoder, and two Latches.</p>
-                        <div class="project-tech">
-                            <span>VHDL</span>
-                            <span>Quartus II</span>
-                            <span>FGPA</span>
+            <div class="projects-carousel">
+                <button class="carousel-btn prev-btn" aria-label="Previous projects">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/quartus-simple-cpu.png" alt="Central Processing Unit">
                         </div>
-                        <a href="#" class="project-link">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Project 2">
-                    </div>
-                    <div class="project-info">
-                        <h3>Heavensent Game Development</h3>
-                        <p>A game development project I am currently spearheading alongside 4 Artists, 2 Writers, and 2 Audio Engineers.</p>
-                        <div class="project-tech">
-                            <span>Godot</span>
-                            <span>GDScript</span>
-                            <span>GitHub</span>
+                        <div class="project-info">
+                            <h3>Central Processing Unit</h3>
+                            <p>A simple central processing unit with a completed FSM, ALU, Seven Segment Display, 4 to 16 Decoder, and two Latches.</p>
+                            <div class="project-tech">
+                                <span>VHDL</span>
+                                <span>Quartus II</span>
+                                <span>FGPA</span>
+                            </div>
                         </div>
-                        <a href="#" class="project-link">View Project</a>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://via.placeholder.com/400x250" alt="Project 3">
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>A responsive personal portfolio website built with modern HTML, CSS, and JavaScript (P.S. this is the website!!).</p>
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/heavensent-parallax.png" alt="Heavensent Game Development">
                         </div>
-                        <a href="#" class="project-link">View Project</a>
+                        <div class="project-info">
+                            <h3>Heavensent Game Development</h3>
+                            <p>A game development project I am currently spearheading alongside 4 Artists, 2 Writers, and 2 Audio Engineers.</p>
+                            <div class="project-tech">
+                                <span>Godot</span>
+                                <span>GDScript</span>
+                                <span>GitHub</span>
+                            </div>
+                        </div>
                     </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/personal-website.png" alt="Portfolio Website">
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>A responsive personal portfolio website built with modern HTML, CSS, and JavaScript.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                      <div class="project-image">
+                          <img src="images/library-ui.png" alt="Library Interface">
+                      </div>
+                      <div class="project-info">
+                          <h3>Library Interface</h3>
+                          <p>A Library UI made entirely with Java that registers and saves user logins, as well as allowing book check-outs and purchases and managing memberships.</p>
+                          <div class="project-tech">
+                              <span>Java</span>
+                              <span>UI Design</span>
+                              <span>Saving User Info</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="project-card">
+                      <div class="project-image">
+                          <img src="images/heap-and-stack.png" alt="Heapsort and Stack">
+                      </div>
+                      <div class="project-info">
+                          <h3>Heapsort</h3>
+                          <p>An algorithm programmed in C that takes in a list of numbers from user input and outputs a heap tree in XML.</p>
+                          <div class="project-tech">
+                              <span>C</span>
+                              <span>Algorithm Design</span>
+                              <span>XML</span>
+                          </div>
+                      </div>
+                  </div>
                 </div>
+                <button class="carousel-btn next-btn" aria-label="Next projects">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -166,15 +200,15 @@
                         <p><i class="fas fa-map-marker-alt"></i> Toronto, Canada</p>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form id="contactForm" class="contact-form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn">Send Message</button>
                 </form>
@@ -188,20 +222,30 @@
             <div class="resume-content">
                 <div class="resume-download">
                     <p>Download my resume to learn more about my experience and qualifications.</p>
-                    <a href="#" class="btn"><i class="fas fa-download"></i> Download Resume</a>
+                    <a href="resume.pdf" class="btn" download><i class="fas fa-download"></i> Download Resume</a>
+                    <a href="#projects" class="btn view-projects-btn"><i class="fas fa-briefcase"></i> View My Projects</a>
                 </div>
                 <div class="resume-highlights">
-                    <h3>Education</h3>
-                    <div class="resume-item">
-                        <h4>Toronto Metropolitan University</h4>
-                        <p>B.Eng in Computer Engineering</p>
-                        <p>Sep. 2023 - Apr. 2028 (est)</p>
+                    <div class="resume-column">
+                        <h3>Education</h3>
+                        <div class="resume-item">
+                            <h4>Toronto Metropolitan University</h4>
+                            <p>B.Eng in Computer Engineering</p>
+                            <p>Sep. 2023 - Apr. 2028 (est)</p>
+                        </div>
                     </div>
-                    <h3>Experience</h3>
-                    <div class="resume-item">
-                        <h4>Web Developer Intern</h4>
-                        <p>Company Name | Summer 2023</p>
-                        <p>Developed and maintained web applications using React and Node.js</p>
+                    <div class="resume-column">
+                        <h3>Experience</h3>
+                        <div class="resume-item">
+                            <h4>Game Development Lead</h4>
+                            <p>Heavensent Project | 2023 - Present</p>
+                            <p>Leading a team of 9 developers, artists, and designers</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Technical Projects</h4>
+                            <p>Various Personal Projects | 2021 - Present</p>
+                            <p>Developed multiple applications and systems</p>
+                        </div>
                     </div>
                 </div>
             </div>
