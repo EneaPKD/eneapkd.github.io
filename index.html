@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- meta tags for character set and responsive design -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- page title displayed in browser tab -->
+    <title>Enea.PKD</title>
+
+    <!-- external stylesheets -->
+    <link href="styles/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- header, contains logo and navs -->
+    <header>
+        <div class="nav-container">
+            <nav>
+                <!-- logo linking back to hero section -->
+                <a href="#hero" class="logo">Enea.PKD</a>
+
+                <!-- social media icons-->
+                <div class="social-icons">
+                    <!-- GitHub profile link -->
+                    <a href="https://github.com/EneaPKD" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <!-- LinkedIn profile link -->
+                    <a href="https://linkedin.com/in/enea-papakostandini-261761380" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+
+                <!-- main nav links -->
+                <div class="nav-content">
+                    <ul class="nav-links">
+                        <li><a href="#about">About Me</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#resume">Resume</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- hero section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Hello my name is <span class="hero-highlight">Enea Papakostandini</span></h1>
+            <p>A 3rd year Computer Engineering student at Toronto Metropolitan University with interests in algorithm design, web development, and game development. </p>
+            
+            <!-- call-to-action buttons -->
+            <div class="button-container">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section -->
+    <section id="about" class="content-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello! I'm Enea Papakostandini, a 3rd year Computer Engineering student at Toronto Metropolitan University.</p>
+                    <p>I specialize in algorithm design, web development, and game development, with experience across multiple programming languages and frameworks. I'm currently the lead developer for an ambitious game while completing my degree. Additionally, I'm expanding my knowledge in machine learning and low-level systems.</p>
+                    <p>I'm always eager to learn and take on new challenges to grow as both a developer and team leader.</p>
+                </div>
+                <div class="about-image">
+                    <img src="images/dumb-enea.jpg" alt="Enea Papakostandini" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- skills section -->
+    <section id="skills" class="content-section">
+        <div class="container">
+            <h2>Skills</h2>
+
+            <!-- grid layout for skill categories -->
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Java</span>
+                        <span class="skill-item">C</span>
+                        <span class="skill-item">C#</span>
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">HTML/CSS</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">VHDL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks and Technologies</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Unity</span>
+                        <span class="skill-item">Godot</span>
+                        <span class="skill-item">Git/GitHub</span>
+                        <span class="skill-item">MatLab</span>
+                        <span class="skill-item">Quartus II</span>
+                        <span class="skill-item">PyTorch</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Areas of Interest</h3>
+                    <div class="skill-list">
+                        <span class="skill-item">Algorithm Design</span>
+                        <span class="skill-item">Web Dev</span>
+                        <span class="skill-item">Game Dev</span>
+                        <span class="skill-item">Machine Learning</span>
+                        <span class="skill-item">Hardware Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section -->
+    <section id="projects" class="content-section">
+        <div class="container">
+            <h2>Projects</h2>
+
+            <!-- carousel container -->
+            <div class="projects-carousel">
+                
+                <!-- left button for project nav -->
+                <button class="carousel-btn prev-btn" aria-label="Previous projects">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <!-- the project cards -->
+                <div class="projects-container">
+
+                    <!-- simple cpu project card-->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/quartus-simple-cpu.png" alt="Central Processing Unit">
+                        </div>
+                        <div class="project-info">
+                            <h3>Central Processing Unit</h3>
+                            <p>A simple central processing unit with a completed FSM, ALU, Seven Segment Display, 4 to 16 Decoder, and two Latches.</p>
+                            <div class="project-tech">
+                                <span>VHDL</span>
+                                <span>Quartus II</span>
+                                <span>FGPA</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- heavensent project card-->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/heavensent-parallax.png" alt="Heavensent Game Development">
+                        </div>
+                        <div class="project-info">
+                            <h3>Heavensent Game Development</h3>
+                            <p>A game development project I am currently spearheading alongside 4 Artists, 2 Writers, and 2 Audio Engineers.</p>
+                            <div class="project-tech">
+                                <span>Godot</span>
+                                <span>GDScript</span>
+                                <span>GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- personal website project card-->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/personal-website.png" alt="Portfolio Website">
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>A responsive personal portfolio website built with modern HTML, CSS, and JavaScript.</p>
+                            <div class="project-tech">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- library ui project card-->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/library-ui.png" alt="Library Interface">
+                        </div>
+                        <div class="project-info">
+                            <h3>Library Interface</h3>
+                            <p>A Library UI made entirely with Java that registers and saves user logins, as well as allowing book check-outs and purchases and managing memberships.</p>
+                            <div class="project-tech">
+                                <span>Java</span>
+                                <span>UI Design</span>
+                                <span>Saving User Info</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- heapsort project card-->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/heap-and-stack.png" alt="Heapsort and Stack">
+                        </div>
+                        <div class="project-info">
+                            <h3>Heapsort</h3>
+                            <p>An algorithm programmed in C that takes in a list of numbers from user input and outputs a heap tree in XML.</p>
+                            <div class="project-tech">
+                                <span>C</span>
+                                <span>Algorithm Design</span>
+                                <span>XML</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+
+                <!-- right button for project nav -->
+                <button class="carousel-btn next-btn" aria-label="Next projects">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- dots container dynamically changed in JS -->
+            <div class="carousel-dots-container"></div>
+        </div>
+    </section>
+
+    <!-- resume section -->
+    <section id="resume" class="content-section">
+        <div class="container">
+            <h2>Resume</h2>
+            <div class="resume-content">
+
+                <!-- view resume and projects part -->
+                <div class="resume-pdf">
+                    <p>View my resume to learn more about my experience and qualifications.</p>
+                    <!-- opens resume in a new tab -->
+                    <a href="Enea-Papakostandini-Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Resume</a>
+                    <!-- links back to projects section -->
+                    <a href="#projects" class="btn view-projects-btn"><i class="fas fa-briefcase"></i> View My Projects</a>
+                </div>
+                <div class="resume-highlights">
+
+                    <!-- education part -->
+                    <div class="resume-column">
+                        <h3>Education</h3>
+                        <div class="resume-item">
+                            <h4>Toronto Metropolitan University</h4>
+                            <p>B.Eng in Computer Engineering</p>
+                            <p>Sep. 2023 - Apr. 2028 (est)</p>
+                        </div>
+                    </div>
+
+                    <!-- experience part -->
+                    <div class="resume-column">
+                        <h3>Experience</h3>
+                        <div class="resume-item">
+                            <h4>Game Development Lead</h4>
+                            <p>Heavensent Project | Apr. 2025 - Present</p>
+                            <p>Systems Programmer, Writer, and Game Designer</p>
+                        </div>
+                        <div class="resume-item">
+                            <h4>Technical Projects</h4>
+                            <p>Various Personal Projects | 2021 - Present</p>
+                            <p>Developed multiple softwares and systems in various areas of interest</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section -->
+    <section id="contact" class="content-section">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                    
+                    <!-- contact details on the left -->
+                    <div class="contact-details">
+                        <p><i class="fas fa-envelope"></i> enea.papakostandini01@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> (647) 939-4179</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Toronto, Canada</p>
+                    </div>
+                </div>
+
+                <!-- contact form on the right -->
+                <form id="contactForm" class="contact-form">
+                    <!-- name input field -->
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <!-- email input field -->
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <!-- message text area -->
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <!-- send message button-->
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <p>Enea Papakostandini - Portfolio Website</p>
+            <div class="footer-contact">
+                <!-- email link -->
+                <a href="mailto:enea.papakostandini01@gmail.com">
+                    <i class="fas fa-envelope"></i> enea.papakostandini01@gmail.com
+                </a>
+                <!-- phone link -->
+                <a href="tel:+16479394179">
+                    <i class="fas fa-phone"></i> (647) 939-4179
+                </a>
+                <!-- location (non-link)-->
+                <a href="#">
+                    <i class="fas fa-map-marker-alt"></i> Toronto, Canada
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- the js file -->
+    <script src="scripts/main.js"></script>
+</body>
+</html>
