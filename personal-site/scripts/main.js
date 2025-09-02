@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // navi and scroll functionality
+    // adds scroll functionality to content, hero, and nav sections
     const sections = document.querySelectorAll('.content-section, .hero');
     const navLinks = document.querySelectorAll('.nav-links a');
     
