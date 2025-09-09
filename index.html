@@ -4,36 +4,36 @@
     <!-- meta tags for character set and responsive design -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-
+    
     <!-- page title displayed in browser tab -->
     <title>Enea.PKD</title>
-
+    
     <!-- external stylesheets -->
     <link href="styles/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- header, contains logo and navs -->
+    <!-- header section with navigation -->
     <header>
         <div class="nav-container">
             <nav>
                 <!-- logo linking back to hero section -->
                 <a href="#hero" class="logo">Enea.PKD</a>
-
-                <!-- social media icons-->
+                
+                <!-- social media icons -->
                 <div class="social-icons">
-                    <!-- GitHub profile link -->
+                    <!-- github profile link -->
                     <a href="https://github.com/EneaPKD" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-github"></i>
                     </a>
-                    <!-- LinkedIn profile link -->
+                    <!-- linkedin profile link -->
                     <a href="https://linkedin.com/in/enea-papakostandini-261761380" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
-
-                <!-- main nav links -->
+                
+                <!-- main navigation links -->
                 <div class="nav-content">
                     <ul class="nav-links">
                         <li><a href="#about">About Me</a></li>
@@ -47,7 +47,7 @@
         </div>
     </header>
 
-    <!-- hero section -->
+    <!-- hero section with introduction -->
     <section id="hero" class="hero">
         <div class="hero-content">
             <h1>Hello my name is <span class="hero-highlight">Enea Papakostandini</span></h1>
@@ -61,7 +61,7 @@
         </div>
     </section>
 
-    <!-- about section -->
+    <!-- about me section -->
     <section id="about" class="content-section">
         <div class="container">
             <h2>About Me</h2>
@@ -82,7 +82,7 @@
     <section id="skills" class="content-section">
         <div class="container">
             <h2>Skills</h2>
-
+            
             <!-- grid layout for skill categories -->
             <div class="skills-grid">
                 <div class="skill-category">
@@ -122,23 +122,23 @@
         </div>
     </section>
 
-    <!-- projects section -->
+    <!-- projects section with carousel -->
     <section id="projects" class="content-section">
         <div class="container">
             <h2>Projects</h2>
-
+            
             <!-- carousel container -->
             <div class="projects-carousel">
                 
-                <!-- left button for project nav -->
+                <!-- left button for project navigation -->
                 <button class="carousel-btn prev-btn" aria-label="Previous projects">
                     <i class="fas fa-chevron-left"></i>
                 </button>
 
-                <!-- the project cards -->
+                <!-- project cards container -->
                 <div class="projects-container">
 
-                    <!-- simple cpu project card-->
+                    <!-- simple cpu project card -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="images/quartus-simple-cpu.png" alt="Central Processing Unit">
@@ -154,7 +154,7 @@
                         </div>
                     </div>
                     
-                    <!-- heavensent project card-->
+                    <!-- heavensent project card -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="images/heavensent-parallax.png" alt="Heavensent Game Development">
@@ -170,7 +170,7 @@
                         </div>
                     </div>
                     
-                    <!-- personal website project card-->
+                    <!-- personal website project card -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="images/personal-website.png" alt="Portfolio Website">
@@ -186,7 +186,7 @@
                         </div>
                     </div>
                     
-                    <!-- library ui project card-->
+                    <!-- library ui project card -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="images/library-ui.png" alt="Library Interface">
@@ -197,12 +197,12 @@
                             <div class="project-tech">
                                 <span>Java</span>
                                 <span>UI Design</span>
-                                <span>Saving User Info</span>
+                                <span>User Data</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- heapsort project card-->
+                    <!-- heapsort project card -->
                     <div class="project-card">
                         <div class="project-image">
                             <img src="images/heap-and-stack.png" alt="Heapsort and Stack">
@@ -220,13 +220,13 @@
                 
                 </div>
 
-                <!-- right button for project nav -->
+                <!-- right button for project navigation -->
                 <button class="carousel-btn next-btn" aria-label="Next projects">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
 
-            <!-- dots container dynamically changed in JS -->
+            <!-- dots container for carousel navigation -->
             <div class="carousel-dots-container"></div>
         </div>
     </section>
@@ -236,18 +236,18 @@
         <div class="container">
             <h2>Resume</h2>
             <div class="resume-content">
-
-                <!-- view resume and projects part -->
+                
+                <!-- view resume and projects section -->
                 <div class="resume-pdf">
                     <p>View my resume to learn more about my experience and qualifications.</p>
                     <!-- opens resume in a new tab -->
-                    <a href="Enea-Papakostandini-Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Resume</a>
+                    <a href="Enea-Papakostandini-General-Resume.pdf" class="btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt"></i> View Resume</a>
                     <!-- links back to projects section -->
                     <a href="#projects" class="btn view-projects-btn"><i class="fas fa-briefcase"></i> View My Projects</a>
                 </div>
                 <div class="resume-highlights">
-
-                    <!-- education part -->
+                    
+                    <!-- education section -->
                     <div class="resume-column">
                         <h3>Education</h3>
                         <div class="resume-item">
@@ -256,8 +256,8 @@
                             <p>Sep. 2023 - Apr. 2028 (est)</p>
                         </div>
                     </div>
-
-                    <!-- experience part -->
+                    
+                    <!-- experience section -->
                     <div class="resume-column">
                         <h3>Experience</h3>
                         <div class="resume-item">
@@ -284,15 +284,15 @@
                 <div class="contact-info">
                     <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
                     
-                    <!-- contact details on the left -->
+                    <!-- contact details -->
                     <div class="contact-details">
                         <p><i class="fas fa-envelope"></i> enea.papakostandini01@gmail.com</p>
                         <p><i class="fas fa-phone"></i> (647) 939-4179</p>
                         <p><i class="fas fa-map-marker-alt"></i> Toronto, Canada</p>
                     </div>
                 </div>
-
-                <!-- contact form on the right -->
+                
+                <!-- contact form -->
                 <form id="contactForm" class="contact-form">
                     <!-- name input field -->
                     <div class="form-group">
@@ -302,18 +302,18 @@
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder="Your Email" required>
                     </div>
-                    <!-- message text area -->
+                    <!-- message textarea -->
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <!-- send message button-->
+                    <!-- submit button -->
                     <button type="submit" class="btn">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- footer -->
+    <!-- footer section -->
     <footer>
         <div class="container">
             <p>Enea Papakostandini - Portfolio Website</p>
@@ -326,7 +326,7 @@
                 <a href="tel:+16479394179">
                     <i class="fas fa-phone"></i> (647) 939-4179
                 </a>
-                <!-- location (non-link)-->
+                <!-- location (non-link) -->
                 <a href="#">
                     <i class="fas fa-map-marker-alt"></i> Toronto, Canada
                 </a>
@@ -334,7 +334,7 @@
         </div>
     </footer>
 
-    <!-- the js file -->
+    <!-- javascript file -->
     <script src="scripts/main.js"></script>
 </body>
 </html>
